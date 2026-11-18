@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buffet Fadson Festas — Diadema</title>
+<meta name="description" content="Buffet Fadson Festas em Diadema: festas infantis, 15 anos, casamentos e buffet a domicílio. Nota 4,8 no Google. Agende sua visita pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2A0619; --plum2:#3E0C26; --cream:#FFF8EF; --cream2:#F6EEDF;
+  --pink:#E36CC0; --pinkd:#C54BA2; --lime:#9CCB4A; --limed:#6E9E2A;
+  --yellow:#F6DE5C; --purple:#7A55A0; --blue:#6AAEE0; --orange:#E09042; --red:#CF5560;
+  --ink:#2A1733; --muted:#7B6A80;
+  --wa:#25D366;
+  --ff-d:'Fraunces',Georgia,serif; --ff:'Outfit',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{font-family:var(--ff);color:var(--ink);background:var(--cream);overflow-x:hidden;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit}
+.serif{font-family:var(--ff-d)}
+em{font-style:italic;font-family:var(--ff-d)}
+
+/* progress rainbow */
+#progress{position:fixed;top:0;left:0;height:4px;width:100%;z-index:100;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--lime),var(--blue),var(--purple),var(--pink))}
+
+/* nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:90;display:flex;align-items:center;gap:14px;
+  padding:8px 8px 8px 18px;border-radius:999px;background:rgba(36,17,46,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.12);color:#fff;transition:background .4s,color .4s;width:max-content;max-width:calc(100% - 24px)}
+.nav.light{background:rgba(255,248,239,.75);color:var(--ink);border-color:rgba(42,23,51,.08)}
+.nav .brand{font-family:var(--ff-d);font-weight:600;font-size:17px;letter-spacing:.2px;white-space:nowrap}
+.nav .brand b{color:var(--pink)}
+.nav a.cta{background:var(--wa);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:9px 16px;border-radius:999px;display:flex;gap:8px;align-items:center;white-space:nowrap}
+.wa-ico{width:18px;height:18px;flex:none}
+
+/* ================= HERO ================= */
+#hero{position:relative;height:100vh;height:100svh;overflow:hidden;background:#24010F;color:#fff}
+#hero .stage{position:absolute;inset:0;display:grid;place-items:center}
+.glow{position:absolute;width:70vmax;height:70vmax;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,206,120,.35) 0%,rgba(255,150,90,.12) 28%,rgba(36,17,46,0) 62%);left:50%;top:58%;transform:translate(-50%,-50%)}
+.vela-wrap{position:absolute;inset:0;display:flex;justify-content:center;pointer-events:none}
+.vela{position:relative;height:125%;aspect-ratio:941/1672;margin-top:calc(62vh - 0.30 * 125vh);margin-top:calc(62svh - 0.30 * 125svh);flex:none;transform-origin:49.6% 30%;
+  -webkit-mask-image:radial-gradient(ellipse 52% 62% at 50% 42%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 52% 62% at 50% 42%,#000 55%,transparent 100%)}
+.vela img{width:100%;height:100%;object-fit:cover}
+.vglow{position:absolute;left:49.6%;top:30%;width:42%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,200,120,.55),rgba(255,140,60,.18) 40%,transparent 70%);mix-blend-mode:screen;animation:breathe 2.2s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(1)}35%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}70%{opacity:.85;transform:translate(-50%,-50%) scale(.96)}}
+.flame{transform-origin:50% 90%;animation:flick 1.6s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1,1) rotate(-1deg)}25%{transform:scale(.94,1.06) rotate(1.5deg)}50%{transform:scale(1.04,.96) rotate(-2deg)}75%{transform:scale(.97,1.04) rotate(1deg)}}
+.hero-copy{position:absolute;left:0;right:0;top:15%;text-align:center;padding:0 22px}
+.kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;opacity:.7;font-weight:500}
+.hero-copy h1{font-family:var(--ff-d);font-weight:400;font-size:clamp(38px,7.4vw,96px);line-height:1.02;margin-top:16px;letter-spacing:-.01em}
+.hero-copy h1 em{color:var(--yellow)}
+.hero-copy2{opacity:0}
+.hero-copy2 h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(30px,5.4vw,70px);line-height:1.06}
+.hero-copy2 h2 em{color:var(--pink)}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.25em;text-transform:uppercase;opacity:.65;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-hint i{width:1px;height:38px;background:linear-gradient(#fff,transparent);animation:drip 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0)}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+.daylight{position:absolute;inset:0;background:var(--cream);opacity:0}
+.rainbow{position:absolute;left:-5%;width:110%;bottom:-6%;height:auto}
+.rainbow path{fill:none;stroke-linecap:butt}
+.balloon{position:absolute;bottom:-30vh;width:clamp(60px,9vw,120px)}
+.reveal3{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 22px;opacity:0;color:var(--ink)}
+.reveal3 h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(34px,6vw,84px);line-height:1.02}
+.reveal3 h2 em{color:var(--pinkd)}
+.reveal3 p{margin-top:14px;color:var(--muted);font-size:clamp(15px,1.6vw,19px)}
+
+/* ================= CAP 1: FABI ================= */
+section{position:relative}
+.chap{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--pinkd);font-weight:600;display:flex;align-items:center;gap:12px}
+.chap::before{content:"";width:28px;height:2px;background:currentColor}
+#fabi{padding:16vh 6vw 12vh;display:grid;grid-template-columns:1.05fr .95fr;gap:5vw;align-items:center;max-width:1300px;margin:0 auto}
+#fabi h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(34px,4.8vw,66px);line-height:1.04;margin:18px 0 22px}
+#fabi h2 em{color:var(--pinkd)}
+#fabi p{font-size:clamp(16px,1.35vw,19px);color:#4d3d55;max-width:540px;margin-bottom:14px}
+.fabi-wrap{position:relative;aspect-ratio:1/1.1}
+.fabi-wrap .blob{position:absolute;inset:6% 4% 4% 8%;border-radius:46% 54% 50% 50%/55% 48% 52% 45%;
+  background:radial-gradient(circle at 30% 30%,#fbe3f3,#f4c5e6 45%,#e9f3d6 100%)}
+.fabi-wrap img{position:absolute;left:50%;bottom:0;height:104%;width:auto;transform:translateX(-50%);filter:drop-shadow(0 30px 40px rgba(60,20,70,.18))}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:540px}
+.stat{background:#fff;border-radius:18px;padding:16px 14px;box-shadow:0 1px 0 rgba(42,23,51,.06),0 12px 30px -18px rgba(42,23,51,.3)}
+.stat b{display:block;white-space:nowrap;font-family:var(--ff-d);font-size:clamp(26px,2.6vw,36px);font-weight:600;line-height:1}
+.stat span{font-size:12.5px;color:var(--muted);display:block;margin-top:6px;line-height:1.3}
+.stat .stars{color:#F5B400;font-size:13px;letter-spacing:1px}
+.line-reveal{overflow:hidden;display:block}
+.line-reveal>span{display:block}
+
+/* ================= CAP 2: PERGUNTAS ================= */
+#pedido{background:var(--plum);color:#fff;padding:14vh 6vw;overflow:hidden}
+#pedido .inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:start}
+#pedido .chap{color:var(--yellow)}
+#pedido h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(32px,4.4vw,60px);line-height:1.05;margin:16px 0 10px}
+#pedido h2 em{color:var(--pink)}
+#pedido .lead{color:rgba(255,255,255,.7);max-width:520px;margin-bottom:34px}
+.q{border-top:1px solid rgba(255,255,255,.12);padding:22px 0}
+.q h3{font-weight:500;font-size:18px;display:flex;gap:12px;align-items:baseline;margin-bottom:14px}
+.q h3 small{font-family:var(--ff-d);font-style:italic;color:var(--yellow);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{appearance:none;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.04);color:#fff;font:inherit;font-size:15px;
+  padding:11px 18px;border-radius:999px;cursor:pointer;transition:all .25s ease}
+.chip:hover{border-color:var(--pink);background:rgba(227,108,192,.12)}
+.chip.on{background:var(--pink);border-color:var(--pink);color:#fff;transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(227,108,192,.8)}
+.ticket{position:sticky;top:96px;background:var(--cream);color:var(--ink);border-radius:26px;padding:30px 28px 26px;overflow:hidden;
+  box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.ticket::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;
+  background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--lime),var(--blue),var(--purple),var(--pink))}
+.ticket .t-k{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.ticket h4{font-family:var(--ff-d);font-weight:400;font-size:30px;line-height:1.1;margin:8px 0 18px}
+.ticket h4 em{color:var(--pinkd)}
+.trow{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed rgba(42,23,51,.18);font-size:15px}
+.trow span{color:var(--muted)}
+.trow b{font-weight:600;text-align:right}
+.trow b.empty{color:#c9bccb;font-weight:400;font-style:italic}
+.trow b.pop{animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(.7);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+.tbtns{display:grid;gap:10px;margin-top:22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:600;font-size:16px;padding:16px 20px;border-radius:16px;transition:transform .2s, box-shadow .2s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn.wa{background:var(--wa);color:#fff;box-shadow:0 14px 30px -14px rgba(37,211,102,.9)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(42,23,51,.18)}
+.ticket .fine{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+.meter{height:6px;border-radius:9px;background:#efe4ea;margin-bottom:6px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--yellow));transition:width .5s ease}
+
+/* ================= CAP 3: O DIA (horizontal) ================= */
+#dia{background:var(--cream2);overflow:hidden}
+.dia-head{padding:14vh 6vw 4vh;max-width:1300px;margin:0 auto}
+.dia-head h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(32px,4.6vw,62px);line-height:1.05;margin-top:16px}
+.dia-head h2 em{color:var(--limed)}
+.track-wrap{height:100vh;height:100svh;display:flex;align-items:center}
+.track{display:flex;gap:28px;padding:0 6vw;will-change:transform}
+.card{flex:none;width:min(78vw,430px);height:min(66vh,540px);border-radius:30px;padding:30px;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.card .n{position:absolute;top:24px;left:30px;font-family:var(--ff-d);font-style:italic;font-size:18px;opacity:.85}
+.card .art{position:absolute;top:0;left:0;right:0;height:58%;display:grid;place-items:center}
+.card h3{font-family:var(--ff-d);font-weight:600;font-size:clamp(26px,2.4vw,34px);line-height:1.05;margin-bottom:10px}
+.card p{font-size:15.5px;opacity:.92}
+.card ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.card li{font-size:13px;background:rgba(255,255,255,.18);padding:6px 11px;border-radius:999px}
+.c1{background:linear-gradient(160deg,#E36CC0,#A9418E)}
+.c2{background:linear-gradient(160deg,#7FB540,#4E8420)}
+.c3{background:linear-gradient(160deg,#F2B544,#D9762C)}
+.c4{background:linear-gradient(160deg,#6AAEE0,#3E73B8)}
+.c5{background:linear-gradient(160deg,#8A62B3,#4E2C70)}
+.card .shade{position:absolute;inset:0;background:#1a0510;opacity:0;pointer-events:none;border-radius:inherit;z-index:3}
+.card.end{background:var(--plum);justify-content:center;text-align:left}
+.card.end h3{font-size:clamp(28px,2.8vw,40px)}
+.card.end .btn{margin-top:22px}
+
+
+/* ================= CAP 4: REALIZADOS ================= */
+#realizados{padding:16vh 6vw 10vh;max-width:1300px;margin:0 auto}
+.real-head{max-width:760px;margin-bottom:10vh}
+.real-head h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(32px,4.6vw,62px);line-height:1.05;margin:16px 0 14px}
+.real-head h2 em{color:var(--pinkd)}
+.real-head p{color:var(--muted);font-size:clamp(16px,1.4vw,19px)}
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:center;margin-bottom:16vh}
+.story.rev{grid-template-columns:.9fr 1.1fr}
+.story.rev .ph{order:2}
+.ph{position:relative}
+.frame{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;clip-path:inset(10% 10% 10% 10% round 28px);will-change:clip-path}
+.frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.25);will-change:transform}
+.frame.wide{aspect-ratio:5/4}
+.mini{position:absolute;width:44%;right:-6%;bottom:-10%;border-radius:22px;overflow:hidden;aspect-ratio:3/4;border:6px solid var(--cream);box-shadow:0 30px 60px -30px rgba(42,23,51,.5)}
+.mini img{width:100%;height:100%;object-fit:cover}
+.stxt .tag{display:inline-flex;gap:8px;align-items:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;padding:7px 14px;border-radius:999px;background:#fff;box-shadow:0 8px 20px -14px rgba(42,23,51,.4)}
+.stxt .tag i{width:8px;height:8px;border-radius:50%;display:block}
+.stxt h3{font-family:var(--ff-d);font-weight:400;font-size:clamp(30px,3.4vw,48px);line-height:1.05;margin:18px 0 14px}
+.stxt h3 em{color:var(--pinkd)}
+.stxt p{color:#4d3d55;font-size:clamp(16px,1.3vw,18px);max-width:440px}
+.stxt .num{font-family:var(--ff-d);font-style:italic;font-size:15px;color:var(--muted);display:block;margin-bottom:16px}
+.real-end{text-align:center;padding-top:2vh}
+.real-end h3{font-family:var(--ff-d);font-weight:400;font-size:clamp(30px,4vw,54px);line-height:1.05;margin-bottom:24px}
+.real-end h3 em{color:var(--pinkd)}
+.real-end .btn{display:inline-flex;min-width:280px}
+@media (max-width:900px){
+  .story,.story.rev{grid-template-columns:1fr;gap:34px;margin-bottom:12vh}
+  .story.rev .ph{order:0}
+  .mini{right:-2%;bottom:-8%;width:40%}
+  .story.pair{margin-bottom:16vh}
+}
+
+/* ================= CAP 5: AVALIAÇÕES ================= */
+#avaliacoes{padding:16vh 6vw;max-width:1300px;margin:0 auto}
+.rate-hero{display:grid;grid-template-columns:auto 1fr;gap:5vw;align-items:center}
+.big{font-family:var(--ff-d);font-weight:600;font-size:clamp(110px,17vw,240px);line-height:.85;letter-spacing:-.04em;
+  background:linear-gradient(120deg,var(--pinkd),var(--purple) 50%,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.starbar{position:relative;display:inline-block;font-size:clamp(28px,3vw,40px);letter-spacing:4px;color:#e6dbe3;margin-top:12px}
+.starbar i{position:absolute;inset:0;width:0;overflow:hidden;color:#F5B400;font-style:normal;white-space:nowrap}
+.g-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:8px 16px 8px 10px;font-size:14px;font-weight:500;box-shadow:0 10px 30px -18px rgba(42,23,51,.4);margin-top:18px}
+.rate-hero h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(30px,3.8vw,52px);line-height:1.08;margin:16px 0 10px}
+.rate-hero h2 em{color:var(--pinkd)}
+.rate-hero p{color:var(--muted);max-width:520px}
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:9vh;max-width:980px;margin-left:auto;margin-right:auto}
+.review{background:#fff;border-radius:24px;padding:28px 26px;box-shadow:0 1px 0 rgba(42,23,51,.05),0 24px 50px -30px rgba(42,23,51,.35);display:flex;flex-direction:column}
+.review .rs{color:#F5B400;letter-spacing:2px;font-size:16px}
+.review blockquote{font-family:var(--ff-d);font-size:19px;line-height:1.38;margin:14px 0 22px;flex:1}
+.review .who{display:flex;align-items:center;gap:12px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:600}
+.review .who b{display:block;font-size:15px}
+.review .who small{color:var(--muted);font-size:12.5px}
+.more{display:flex;justify-content:center;margin-top:40px}
+.more a{font-weight:600;text-decoration:none;border-bottom:2px solid var(--pink);padding-bottom:3px}
+
+/* ================= CAP 5: FINAL ================= */
+#final{background:var(--plum);color:#fff;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:14vh 6vw 10vh;overflow:hidden}
+#final .glow{top:62%}
+#final .wrap{position:relative;z-index:2;max-width:820px}
+#final h2{font-family:var(--ff-d);font-weight:400;font-size:clamp(36px,6vw,82px);line-height:1.02;margin:16px 0}
+#final h2 em{color:var(--yellow)}
+#final p.sub{color:rgba(255,255,255,.72);font-size:clamp(16px,1.5vw,19px);max-width:560px;margin:0 auto}
+.cake{position:relative;width:min(440px,84vw);margin:38px auto 32px;border-radius:30px;overflow:hidden;box-shadow:0 50px 100px -40px rgba(255,150,80,.35),0 0 0 1px rgba(255,255,255,.08)}
+.cake img{width:100%;transition:filter 1.2s ease}
+.cake .fl,.cake .off,.cake .sm{position:absolute;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%}
+.cake .fl{width:22%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,210,130,.6),rgba(255,150,60,.15) 45%,transparent 70%);mix-blend-mode:screen;animation:breathe2 1.8s ease-in-out infinite;transition:opacity .4s}
+
+@keyframes breathe2{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}40%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}}
+.cake .off{width:7%;height:12%;background:radial-gradient(ellipse,rgb(58,11,27) 45%,rgba(58,11,27,.9) 60%,transparent 78%);opacity:0;transition:opacity .3s ease-in}
+.cake .dim{position:absolute;left:50%;top:12%;width:55%;height:26%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(ellipse,rgba(50,9,24,.8),rgba(50,9,24,.4) 50%,transparent 72%);opacity:0;transition:opacity .6s ease;pointer-events:none}
+.cake.out .dim{opacity:1}
+.cake .sm{width:3.5%;height:7%;background:radial-gradient(ellipse,rgba(190,180,195,.45),transparent 70%);opacity:0;filter:blur(1.5px)}
+.cake.out .fl{opacity:0}
+.cake.out .off{opacity:1}
+.cake.out img{filter:brightness(.72) saturate(.9)}
+.cake.out .sm{animation:smoke 2.2s ease-out forwards}
+.cake.out .sm.s2{animation-delay:.25s}.cake.out .sm.s3{animation-delay:.5s}
+@keyframes smoke{0%{opacity:0;transform:translate(-50%,-30%) scale(.5)}15%{opacity:.7}100%{opacity:0;transform:translate(-20%,-220%) scale(1.8,2.4)}}
+.final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.final-btns .btn{min-width:260px}
+.btn.light{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.addr{margin-top:46px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.addr div{border-top:1px solid rgba(255,255,255,.15);padding-top:14px;font-size:14.5px;color:rgba(255,255,255,.8)}
+.addr b{display:block;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--pink);margin-bottom:6px;font-weight:600}
+.addr a{text-decoration:none}
+footer{background:#170a1d;color:rgba(255,255,255,.45);text-align:center;font-size:12.5px;padding:26px 20px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:120}
+
+/* floating wa */
+.fab{position:fixed;right:18px;bottom:18px;z-index:95;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;
+  box-shadow:0 14px 34px -10px rgba(37,211,102,.8);transform:scale(0);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.fab.show{transform:scale(1)}
+.fab svg{width:30px;height:30px}
+.fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 2.2s ease-out infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+
+@media (max-width:900px){
+  #fabi{grid-template-columns:1fr;padding-top:12vh}
+  .fabi-wrap{max-width:420px;width:100%;margin:0 auto;order:-1}
+  #pedido .inner{grid-template-columns:1fr}
+  .ticket{position:relative;top:0}
+  .rate-hero{grid-template-columns:1fr}
+  .reviews{grid-template-columns:1fr}
+  .addr{grid-template-columns:1fr}
+  .nav .brand{font-size:15px}
+  #dia{overflow:visible;overflow-x:clip}
+  .track-wrap{height:auto;display:block}
+  .track{flex-direction:column;gap:0;padding:0 5vw 8vh;transform:none!important}
+  .card{width:100%;height:68vh;height:68svh;position:sticky;top:13vh;top:13svh;margin-bottom:8vh;transform-origin:50% 0;
+    box-shadow:0 -20px 40px -20px rgba(42,23,51,.35)}
+  .card:nth-child(2){top:calc(13svh + 8px)}.card:nth-child(3){top:calc(13svh + 16px)}.card:nth-child(4){top:calc(13svh + 24px)}
+  .card:nth-child(5){top:calc(13svh + 32px)}.card:nth-child(6){top:calc(13svh + 40px);margin-bottom:0}
+  .dia-head{padding-bottom:6vh}
+  .nav a.cta span{display:none}
+  .nav a.cta{padding:9px 12px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<canvas id="confetti"></canvas>
+
+<nav class="nav" id="nav">
+  <div class="brand">Fadson <b>Festas</b></div>
+  <a class="cta wa-link" data-intent="visita" href="#" target="_blank" rel="noopener">
+    <svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5c0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.5c2.9 1.1 2.9.8 3.4.7a3 3 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3M12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8M20.5 3.5A11.9 11.9 0 0 0 1.8 17.9L.1 24l6.3-1.7A11.9 11.9 0 0 0 24 12a11.8 11.8 0 0 0-3.5-8.5"/></svg>
+    <span>Agendar visita</span></a>
+</nav>
+
+<!-- ============ HERO / O PEDIDO ============ -->
+<section id="hero">
+  <div class="stage">
+    <div class="glow" id="glow"></div>
+    <div class="vela-wrap"><div class="vela" id="candle"><img src="img/vela.webp" alt="Vela de aniversário acesa"><span class="vglow"></span></div></div>
+    <div class="daylight" id="daylight"></div>
+    <svg class="rainbow" id="rainbow" viewBox="0 0 1400 620" preserveAspectRatio="xMidYMax slice"></svg>
+    <img class="balloon" id="b1" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'><defs><radialGradient id='g' cx='35%' cy='30%'><stop offset='0' stop-color='%23fff' stop-opacity='.7'/><stop offset='.35' stop-color='%23F6DE5C'/><stop offset='1' stop-color='%23e0b92c'/></radialGradient></defs><ellipse cx='50' cy='55' rx='44' ry='52' fill='url(%23g)'/><path d='M46 106h8l-4 6z' fill='%23e0b92c'/><path d='M50 112c-8 20 10 35 0 60s6 25 0 28' stroke='%23e0b92c' fill='none' stroke-width='1.5'/></svg>" alt="" style="left:8%">
+    <img class="balloon" id="b2" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'><defs><radialGradient id='g' cx='35%' cy='30%'><stop offset='0' stop-color='%23fff' stop-opacity='.7'/><stop offset='.35' stop-color='%23E36CC0'/><stop offset='1' stop-color='%23b8439a'/></radialGradient></defs><ellipse cx='50' cy='55' rx='44' ry='52' fill='url(%23g)'/><path d='M46 106h8l-4 6z' fill='%23b8439a'/><path d='M50 112c-8 20 10 35 0 60s6 25 0 28' stroke='%23b8439a' fill='none' stroke-width='1.5'/></svg>" alt="" style="left:78%">
+    <img class="balloon" id="b3" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'><defs><radialGradient id='g' cx='35%' cy='30%'><stop offset='0' stop-color='%23fff' stop-opacity='.7'/><stop offset='.35' stop-color='%239CCB4A'/><stop offset='1' stop-color='%236e9e2a'/></radialGradient></defs><ellipse cx='50' cy='55' rx='44' ry='52' fill='url(%23g)'/><path d='M46 106h8l-4 6z' fill='%236e9e2a'/><path d='M50 112c-8 20 10 35 0 60s6 25 0 28' stroke='%236e9e2a' fill='none' stroke-width='1.5'/></svg>" alt="" style="left:64%">
+
+    <div class="hero-copy" id="hc1">
+      <div class="kicker">Buffet Fadson Festas · Diadema</div>
+      <h1>Toda festa começa<br>com um <em>pedido.</em></h1>
+    </div>
+    <div class="hero-copy hero-copy2" id="hc2">
+      <h2>Feche os olhos.<br>Pense na festa que você<br>quer <em>viver.</em></h2>
+    </div>
+    <div class="reveal3" id="hc3">
+      <div>
+        <h2>A gente cuida<br>do <em>resto.</em></h2>
+        <p>Infantil · 15 anos · Casamentos · Adultos · Buffet a domicílio</p>
+      </div>
+    </div>
+    <div class="scroll-hint" id="hint">role<i></i></div>
+  </div>
+</section>
+
+<!-- ============ CAP 1: A FABI ============ -->
+<section id="fabi">
+  <div>
+    <div class="chap">Capítulo 1 · Quem realiza</div>
+    <h2 class="split">Por trás de cada pedido, existe <em>a Fabi.</em></h2>
+    <p class="fade">A Fabiana — a Fabi, como os clientes chamam — transforma em festa aquilo que você só tinha imaginado. Ela ouve a sua ideia, olha suas fotos de inspiração e monta junto com você cada detalhe.</p>
+    <p class="fade">Há quase duas décadas, em Diadema, é assim: salão climatizado, decoração inclusa, cardápio feito com carinho e uma equipe que deixa você aproveitar a própria festa.</p>
+    <div class="stats">
+      <div class="stat fade"><b><span class="count" data-to="4.8" data-dec="1">0</span></b><span class="stars">★★★★★</span><span>nota no Google</span></div>
+      <div class="stat fade"><b><span class="count" data-to="934">0</span></b><span>avaliações no Google</span></div>
+      <div class="stat fade"><b><span class="count" data-to="100">0</span>%</b><span>recomendam no Facebook</span></div>
+    </div>
+  </div>
+  <div class="fabi-wrap">
+    <div class="blob" id="blob"></div>
+    <img src="img/fabi.webp" alt="Ilustração da Fabi, do Buffet Fadson Festas, com balões e bolo" id="fabiImg">
+  </div>
+</section>
+
+<!-- ============ CAP 2: SEU PEDIDO (perguntas) ============ -->
+<section id="pedido">
+  <div class="inner">
+    <div>
+      <div class="chap">Capítulo 2 · O seu pedido</div>
+      <h2 class="split">Conta pra gente:<br>que festa é <em>a sua?</em></h2>
+      <p class="lead fade">Responda 4 perguntinhas. O seu convite vai se montando ao lado — e chega pronto no WhatsApp da Fabi.</p>
+
+      <div class="q fade" data-key="tipo">
+        <h3><small>01</small> O que vamos celebrar?</h3>
+        <div class="chips">
+          <button class="chip">Festa infantil</button><button class="chip">Festa teen / 15 anos</button><button class="chip">Casamento</button><button class="chip">Aniversário adulto</button><button class="chip">Evento / empresa</button>
+        </div>
+      </div>
+      <div class="q fade" data-key="onde">
+        <h3><small>02</small> Onde vai ser?</h3>
+        <div class="chips">
+          <button class="chip">No salão Fadson</button><button class="chip">Na minha casa / meu espaço</button><button class="chip">Ainda não sei</button>
+        </div>
+      </div>
+      <div class="q fade" data-key="convidados">
+        <h3><small>03</small> Quantos convidados, mais ou menos?</h3>
+        <div class="chips">
+          <button class="chip">Até 50</button><button class="chip">50 a 100</button><button class="chip">100 a 150</button><button class="chip">Mais de 150</button>
+        </div>
+      </div>
+      <div class="q fade" data-key="quando">
+        <h3><small>04</small> Para quando?</h3>
+        <div class="chips">
+          <button class="chip">Nos próximos 30 dias</button><button class="chip">Em 2 a 3 meses</button><button class="chip">Daqui a 6 meses</button><button class="chip">Ano que vem</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="ticket fade" id="ticket">
+      <div class="meter"><i id="meter"></i></div>
+      <div class="t-k">Seu convite · rascunho</div>
+      <h4>O pedido de<br><em>uma festa inesquecível</em></h4>
+      <div class="trow"><span>Celebração</span><b data-out="tipo" class="empty">—</b></div>
+      <div class="trow"><span>Local</span><b data-out="onde" class="empty">—</b></div>
+      <div class="trow"><span>Convidados</span><b data-out="convidados" class="empty">—</b></div>
+      <div class="trow"><span>Quando</span><b data-out="quando" class="empty">—</b></div>
+      <div class="tbtns">
+        <a class="btn wa wa-link" data-intent="visita" href="#" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><use href="#waPath"/></svg>Agendar uma visita</a>
+        <a class="btn ghost wa-link" data-intent="orcamento" href="#" target="_blank" rel="noopener">Quero fechar / pedir orçamento</a>
+      </div>
+      <div class="fine">Abre o WhatsApp com tudo já escrito. É só enviar.</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ CAP 3: O DIA ============ -->
+<section id="dia">
+  <div class="dia-head">
+    <div class="chap">Capítulo 3 · O grande dia</div>
+    <h2 class="split">Agora imagina<br>o dia <em>acontecendo.</em></h2>
+  </div>
+  <div class="track-wrap">
+    <div class="track" id="track">
+      <article class="card c1">
+        <span class="n">a chegada</span>
+        <div class="art"><svg width="150" viewBox="0 0 150 120"><g fill="none" stroke="#fff" stroke-width="3" opacity=".9"><path d="M10 110h130M25 110V45l50-30 50 30v65"/><path d="M60 110V75h30v35"/></g><circle cx="40" cy="30" r="6" fill="#F6DE5C"/><circle cx="118" cy="22" r="4" fill="#fff"/></svg></div>
+        <h3>As portas se abrem</h3>
+        <p>Salão amplo, climatizado e decorado no tema que você escolheu. Você só chega.</p>
+        <ul><li>Climatizado</li><li>Decoração inclusa</li></ul>
+      </article>
+      <article class="card c2">
+        <span class="n">a diversão</span>
+        <div class="art"><svg width="150" viewBox="0 0 150 120"><g fill="none" stroke="#fff" stroke-width="3"><rect x="20" y="40" width="110" height="60" rx="14"/><circle cx="50" cy="70" r="10"/><path d="M95 62v16M87 70h16"/></g><circle cx="122" cy="26" r="7" fill="#F6DE5C"/></svg></div>
+        <h3>A criançada se solta</h3>
+        <p>Brinquedos e jogos com monitoria, enquanto os pais curtem a festa tranquilos.</p>
+        <ul><li>Tombo legal</li><li>Camarim + pintura facial</li><li>Pebolim</li><li>Jogos eletrônicos</li></ul>
+      </article>
+      <article class="card c3">
+        <span class="n">a mesa</span>
+        <div class="art"><svg width="150" viewBox="0 0 150 120"><g fill="none" stroke="#fff" stroke-width="3"><path d="M20 70h110a55 40 0 0 1-110 0Z"/><path d="M60 50c0-10 10-10 10-20M80 50c0-10 10-10 10-20"/></g></svg></div>
+        <h3>O cheiro da cozinha</h3>
+        <p>Cardápio montado pro seu evento — dos salgadinhos ao jantar completo.</p>
+        <ul><li>Salgadinhos</li><li>Churrasco</li><li>Parmegiana</li><li>Opções vegetarianas</li></ul>
+      </article>
+      <article class="card c4">
+        <span class="n">em qualquer lugar</span>
+        <div class="art"><svg width="150" viewBox="0 0 150 120"><g fill="none" stroke="#fff" stroke-width="3"><path d="M30 100V55l45-35 45 35v45z"/><path d="M62 100V72h26v28"/></g><path d="M100 24c4 0 6 3 6 6s-6 9-6 9-6-6-6-9 2-6 6-6z" fill="#E36CC0"/></svg></div>
+        <h3>Ou na sua casa</h3>
+        <p>Já tem o espaço? O buffet completo vai até você, com a mesma qualidade.</p>
+        <ul><li>Buffet a domicílio</li><li>Equipe completa</li></ul>
+      </article>
+      <article class="card c5">
+        <span class="n">o momento</span>
+        <div class="art"><svg width="150" viewBox="0 0 150 120"><rect x="35" y="60" width="80" height="14" fill="#E36CC0"/><rect x="35" y="74" width="80" height="12" fill="#F6DE5C"/><rect x="35" y="86" width="80" height="12" fill="#9CCB4A"/><rect x="35" y="98" width="80" height="12" fill="#6AAEE0"/><g fill="#fff"><rect x="55" y="38" width="5" height="22"/><rect x="73" y="34" width="5" height="26"/><rect x="91" y="38" width="5" height="22"/></g><g fill="#F6DE5C"><ellipse cx="57.5" cy="32" rx="4" ry="6"/><ellipse cx="75.5" cy="28" rx="4" ry="6"/><ellipse cx="93.5" cy="32" rx="4" ry="6"/></g></svg></div>
+        <h3>A hora do parabéns</h3>
+        <p>As luzes baixam, as velas acendem e todo mundo canta. É aqui que o pedido vira memória.</p>
+      </article>
+      <article class="card end">
+        <span class="n" style="color:var(--yellow)">e então…</span>
+        <h3>Esse dia pode ser <em style="color:var(--pink)">o seu.</em></h3>
+        <p style="opacity:.75">As datas mais procuradas fecham primeiro. Venha conhecer o salão pessoalmente.</p>
+        <a class="btn wa wa-link" data-intent="visita" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><use href="#waPath"/></svg>Agendar visita</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAP 4: PEDIDOS REALIZADOS ============ -->
+<section id="realizados">
+  <div class="real-head">
+    <div class="chap">Capítulo 4 · Pedidos realizados</div>
+    <h2 class="split">Cada pedido vira<br>uma festa <em>única.</em></h2>
+    <p class="fade">Nada de festa de catálogo. Estas são festas reais que a Fabi montou aqui no salão Fadson, em Piraporinha — cada uma com a cara de quem pediu.</p>
+  </div>
+
+  <article class="story">
+    <div class="ph"><div class="frame"><img src="img/julia.webp" alt="Decoração de 1 ano da Júlia no salão Fadson, em rosa e azul, com balões e letreiro neon"></div></div>
+    <div class="stxt">
+      <span class="num">pedido nº 1</span>
+      <span class="tag"><i style="background:var(--pink)"></i>Infantil · 1 ano</span>
+      <h3>O primeiro aninho<br>da <em>Júlia</em></h3>
+      <p>Rosa, azul e a turminha da fazenda: arcos de balões, número 1 em neon e uma mesa de doces pensada para cada foto.</p>
+    </div>
+  </article>
+
+  <article class="story rev">
+    <div class="ph"><div class="frame"><img src="img/cintia.webp" alt="Festa de 40 anos da Cintia com letreiro neon, painel de disco de vinil, balões preto e dourado e pista de LED"></div></div>
+    <div class="stxt">
+      <span class="num">pedido nº 2</span>
+      <span class="tag"><i style="background:#C9A227"></i>Adulto · 40 anos</span>
+      <h3>Os 40 da Cintia,<br>em <em>preto e dourado</em></h3>
+      <p>O nome dela em neon, um disco de vinil como painel e a pista de LED brilhando no chão. Festa de adulto, com cara de balada.</p>
+    </div>
+  </article>
+
+  <article class="story pair">
+    <div class="ph">
+      <div class="frame wide"><img src="img/salao.webp" alt="Salão do Buffet Fadson Festas decorado para chá de casa nova, com mesa posta e arcos de balões"></div>
+      <div class="mini"><img src="img/cha-bolo.webp" alt="Bolo branco de três andares do chá de casa nova"></div>
+    </div>
+    <div class="stxt">
+      <span class="num">pedido nº 3</span>
+      <span class="tag"><i style="background:var(--yellow)"></i>Chá de casa nova</span>
+      <h3>Melissa &amp; Felipe<br>abrindo a <em>casa nova</em></h3>
+      <p>Tons claros com dourado, arcos, bolo de três andares e as mesas postas no salão, com luz natural, pra receber a família inteira.</p>
+    </div>
+  </article>
+
+  <div class="real-end">
+    <h3 class="split">O próximo pedido<br>pode ser <em>o seu.</em></h3>
+    <a class="btn wa wa-link fade" data-intent="visita" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><use href="#waPath"/></svg>Quero uma festa assim</a>
+  </div>
+</section>
+
+<!-- ============ CAP 5: AVALIAÇÕES ============ -->
+<section id="avaliacoes">
+  <div class="rate-hero">
+    <div>
+      <div class="big"><span class="count" data-to="4.8" data-dec="1">0</span></div>
+      <div class="starbar">★★★★★<i id="starfill">★★★★★</i></div><br>
+      <div class="g-badge">
+        <svg width="22" height="22" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20H24v8h11.3C33.7 33 29.3 36 24 36a12 12 0 1 1 7.9-21l5.7-5.7A20 20 0 1 0 44 24c0-1.3-.1-2.7-.4-4z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8A12 12 0 0 1 31.9 15l5.7-5.7A20 20 0 0 0 6.3 14.7z"/><path fill="#4CAF50" d="M24 44a20 20 0 0 0 13.4-5.2l-6.2-5.2A12 12 0 0 1 12.7 28l-6.5 5A20 20 0 0 0 24 44z"/><path fill="#1976D2" d="M43.6 20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C41 35.4 44 30.2 44 24c0-1.3-.1-2.7-.4-4z"/></svg>
+        <span><span class="count" data-to="934">0</span> avaliações no Google</span>
+      </div>
+    </div>
+    <div>
+      <div class="chap">Capítulo 5 · Quem já viveu</div>
+      <h2 class="split">Centenas de pedidos.<br>Centenas de <em>festas realizadas.</em></h2>
+      <p class="fade">Não precisa acreditar só na gente. Olha o que dizem as famílias e os casais que já fizeram a festa com a Fabi.</p>
+    </div>
+  </div>
+  <div class="reviews">
+    <figure class="review">
+      <div class="rs">★★★★★</div>
+      <blockquote>“Realizamos nosso sonho. Ao entrar no salão no dia do meu casamento e ver como tudo estava perfeito, me deu vontade de voltar no tempo e casar novamente.”</blockquote>
+      <figcaption class="who"><div class="avatar" style="background:var(--pink)">I</div><div><b>Iara</b><small>Casamento · via Casamentos.com.br</small></div></figcaption>
+    </figure>
+    <figure class="review">
+      <div class="rs">★★★★★</div>
+      <blockquote>“Muito atencioso, fui bem exigente aos detalhes e fiquei surpreendido com o resultado. Indico!”</blockquote>
+      <figcaption class="who"><div class="avatar" style="background:var(--blue)">J</div><div><b>Jefferson Bicudo</b><small>Avaliação no Google</small></div></figcaption>
+    </figure>
+  </div>
+  <div class="more"><a href="https://www.google.com/maps/search/?api=1&query=Buffet+Fadson+Festas+Rua+Fernanda+12+Diadema" target="_blank" rel="noopener">Ver todas as avaliações no Google →</a></div>
+</section>
+
+<!-- ============ FINAL: SOPRE AS VELAS ============ -->
+<section id="final">
+  <div class="glow" id="glow2"></div>
+  <div class="wrap">
+    <div class="kicker" style="color:var(--pink)">Epílogo · A sua vez</div>
+    <h2 class="split">Lembra do pedido<br>do começo? <em>Faça agora.</em></h2>
+    <p class="sub fade">Sopre as velinhas: a gente abre o WhatsApp da Fabi com o seu pedido pronto pra enviar.</p>
+    <div class="cake" id="cake"><img src="img/bolo.webp" alt="Bolo de aniversário arco-íris com três velas acesas"><i class="dim"></i><i class="off" style="left:39.8%;top:13.3%"></i><i class="fl" style="left:39.8%;top:13.3%"></i><i class="sm s1" style="left:39.8%;top:13.3%"></i><i class="off" style="left:50.1%;top:10.5%"></i><i class="fl" style="left:50.1%;top:10.5%"></i><i class="sm s2" style="left:50.1%;top:10.5%"></i><i class="off" style="left:59.3%;top:13.1%"></i><i class="fl" style="left:59.3%;top:13.1%"></i><i class="sm s3" style="left:59.3%;top:13.1%"></i></div>
+    <div class="final-btns">
+      <a class="btn wa wa-link blow" data-intent="visita" href="#" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="#fff"><use href="#waPath"/></svg>Soprar as velas e agendar visita</a>
+      <a class="btn light wa-link blow" data-intent="orcamento" href="#" target="_blank" rel="noopener">Quero fechar minha festa</a>
+    </div>
+    <div class="addr">
+      <div><b>Endereço</b><a href="https://www.google.com/maps/search/?api=1&query=Buffet+Fadson+Festas+Rua+Fernanda+12+Diadema" target="_blank" rel="noopener">R. Fernanda, 12 – Piraporinha<br>Diadema · SP</a></div>
+      <div><b>WhatsApp</b><a class="wa-link" data-intent="visita" href="#" target="_blank" rel="noopener">(11) 94375-8345</a></div>
+      <div><b>Instagram</b><a href="https://www.instagram.com/fadsonfestas" target="_blank" rel="noopener">@fadsonfestas</a></div>
+    </div>
+  </div>
+</section>
+<footer>Buffet Fadson Festas · Diadema/SP · Festas infantis, teen, casamentos, eventos e buffet a domicílio</footer>
+
+<a class="fab wa-link" id="fab" data-intent="visita" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path id="waPath" d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5c0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.5c2.9 1.1 2.9.8 3.4.7a3 3 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3M12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8M20.5 3.5A11.9 11.9 0 0 0 1.8 17.9L.1 24l6.3-1.7A11.9 11.9 0 0 0 24 12a11.8 11.8 0 0 0-3.5-8.5"/></svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ---------- WhatsApp: pedido montado pelas respostas ---------- */
+const WA = '5511943758345';
+const answers = {};
+function buildMsg(intent){
+  const l = ['Olá, Fabi! Vim pelo site e quero fazer o meu pedido 🎂', ''];
+  if(answers.tipo) l.push('🎉 Celebração: ' + answers.tipo);
+  if(answers.onde) l.push('📍 Local: ' + answers.onde);
+  if(answers.convidados) l.push('👥 Convidados: ' + answers.convidados);
+  if(answers.quando) l.push('📅 Quando: ' + answers.quando);
+  if(Object.keys(answers).length) l.push('');
+  l.push(intent === 'orcamento' ? 'Quero receber um orçamento e fechar minha festa!' : 'Gostaria de agendar uma visita para conhecer o buffet.');
+  return l.join('\n');
+}
+function refreshLinks(){
+  document.querySelectorAll('.wa-link').forEach(a=>{
+    a.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(buildMsg(a.dataset.intent));
+  });
+}
+refreshLinks();
+document.querySelectorAll('.q').forEach(q=>{
+  const key = q.dataset.key;
+  q.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+    q.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+    c.classList.add('on');
+    answers[key] = c.textContent.trim();
+    const out = document.querySelector('[data-out="'+key+'"]');
+    out.textContent = answers[key]; out.classList.remove('empty','pop'); void out.offsetWidth; out.classList.add('pop');
+    document.getElementById('meter').style.width = (Object.keys(answers).length/4*100)+'%';
+    refreshLinks();
+  }));
+});
+
+/* ---------- Soprar velas + confete ---------- */
+const cv = document.getElementById('confetti'), cx = cv.getContext('2d');
+let parts=[], raf=null;
+function sizeCv(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio;}
+sizeCv(); addEventListener('resize',sizeCv);
+function confetti(){
+  const cols=['#E36CC0','#F6DE5C','#9CCB4A','#6AAEE0','#8A62B3','#E09042'];
+  for(let i=0;i<160;i++) parts.push({x:cv.width/2,y:cv.height*.62,vx:(Math.random()-.5)*26*devicePixelRatio,vy:(-Math.random()*22-8)*devicePixelRatio,
+    r:(Math.random()*6+4)*devicePixelRatio,c:cols[i%cols.length],a:Math.random()*6,va:(Math.random()-.5)*.3,life:0});
+  if(!raf) tick();
+}
+function tick(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  parts.forEach(p=>{p.vy+=.55*devicePixelRatio;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.life++;
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.fillStyle=p.c;cx.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);cx.restore();});
+  parts=parts.filter(p=>p.y<cv.height+50&&p.life<260);
+  raf = parts.length ? requestAnimationFrame(tick) : (cx.clearRect(0,0,cv.width,cv.height), null);
+}
+document.querySelectorAll('.blow').forEach(b=>b.addEventListener('click',()=>{
+  document.getElementById('cake').classList.add('out');
+  confetti();
+  setTimeout(()=>document.getElementById('cake').classList.remove('out'),7000);
+}));
+
+/* ---------- Scroll storytelling ---------- */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const nav = document.getElementById('nav'), fab = document.getElementById('fab');
+
+// rainbow paths
+(function(){
+  const svg=document.getElementById('rainbow');
+  const cols=['#D65DB1','#7A55A0','#6AAEE0','#8BBF55','#E9C64A','#D98A3D','#C9505A'];
+  const ns='http://www.w3.org/2000/svg';
+  cols.forEach((c,i)=>{
+    const p=document.createElementNS(ns,'path');
+    const o=i*34;
+    p.setAttribute('d',`M-60,${470+o} C200,${250+o} 470,${300+o} 720,${400+o} S1150,${520+o} 1480,${260+o}`);
+    p.setAttribute('stroke',c);p.setAttribute('stroke-width','35');p.setAttribute('pathLength','1');
+    p.style.strokeDasharray='1';p.style.strokeDashoffset='1';
+    svg.appendChild(p);
+  });
+})();
+
+if(window.gsap && window.ScrollTrigger && !reduce){
+  gsap.registerPlugin(ScrollTrigger);
+
+  // progresso
+  gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
+
+  // intro
+  gsap.from('#hc1 .kicker',{y:20,opacity:0,duration:1,delay:.2});
+  gsap.from('#hc1 h1',{y:40,opacity:0,duration:1.2,delay:.35,ease:'power3.out'});
+  gsap.from('#candle',{scale:1.15,opacity:0,duration:2,delay:.1,ease:'power2.out'});
+
+  // HERO pinado: pedido -> fechar olhos -> luz -> arco-íris
+  const tl = gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'+=260%',scrub:1,pin:true}});
+  tl.to('#hint',{opacity:0,duration:.2},0)
+    .to('#hc1',{opacity:0,y:-60,duration:1},0)
+    .to('#hc2',{opacity:1,duration:1},.6)
+    .from('#hc2 h2',{y:40,duration:1},.6)
+    .to('#glow',{scale:1.8,duration:2},.6)
+    .to('#candle',{scale:1.6,duration:2},.6)
+    .to('#hc2',{opacity:0,y:-40,duration:.8},2.2)
+    .to('#glow',{scale:6,opacity:.9,duration:1.4},2.4)
+    .to('#daylight',{opacity:1,duration:1},2.9)
+    .to('#candle',{scale:5,duration:1.4},2.2).to('#candle',{opacity:0,duration:.6},2.9)
+    .to('#rainbow path',{strokeDashoffset:0,duration:2,stagger:.08,ease:'power2.out'},3.3)
+    .to('#b1',{y:'-120vh',x:30,rotation:-8,duration:3.2,ease:'none'},3.3)
+    .to('#b2',{y:'-125vh',x:-20,rotation:6,duration:3,ease:'none'},3.5)
+    .to('#b3',{y:'-118vh',x:-40,rotation:10,duration:3.4,ease:'none'},3.7)
+    .to('#hc3',{opacity:1,duration:.9},4.1)
+    .from('#hc3 h2',{y:50,duration:.9},4.1)
+    .to({}, {duration:.8});
+
+  // nav claro/escuro
+  ScrollTrigger.create({trigger:'#hero',start:'bottom-=1 top',end:'bottom top',onEnter:()=>{},onLeave:()=>{}});
+  const lightSecs=['#fabi','#dia','#realizados','#avaliacoes'];
+  lightSecs.forEach(s=>ScrollTrigger.create({trigger:s,start:'top 60',end:'bottom 60',toggleClass:{targets:nav,className:'light'}}));
+  ScrollTrigger.create({trigger:'#hero',start:'60% top',onEnter:()=>nav.classList.add('light'),onLeaveBack:()=>nav.classList.remove('light')});
+  ScrollTrigger.create({trigger:'#fabi',start:'top 80%',onEnter:()=>fab.classList.add('show'),onLeaveBack:()=>fab.classList.remove('show')});
+
+  // títulos: revelar por palavra
+  document.querySelectorAll('.split').forEach(el=>{
+    const html = el.innerHTML;
+    el.innerHTML = html.replace(/(<[^>]+>)|([^<\s]+)/g,(m,tag,word)=> tag ? tag : `<span class="line-reveal" style="display:inline-block;vertical-align:top"><span style="display:inline-block">${word}</span></span>`);
+    gsap.from(el.querySelectorAll('.line-reveal>span'),{yPercent:110,duration:1,ease:'power4.out',stagger:.045,
+      scrollTrigger:{trigger:el,start:'top 85%'}});
+  });
+  gsap.utils.toArray('.fade').forEach(el=>gsap.from(el,{y:40,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
+
+  // Fabi parallax
+  gsap.from('#fabiImg',{yPercent:18,opacity:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'#fabi',start:'top 70%'}});
+  gsap.to('#fabiImg',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'#fabi',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.to('#blob',{rotation:25,scale:1.06,ease:'none',scrollTrigger:{trigger:'#fabi',start:'top bottom',end:'bottom top',scrub:true}});
+
+  // contadores
+  document.querySelectorAll('.count').forEach(el=>{
+    const to=parseFloat(el.dataset.to), dec=+(el.dataset.dec||0), o={v:0};
+    gsap.to(o,{v:to,duration:2,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%'},
+      onUpdate:()=>{el.textContent = o.v.toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec});}});
+  });
+  gsap.to('#starfill',{width:'96%',duration:2,ease:'power2.out',scrollTrigger:{trigger:'#starfill',start:'top 90%'}});
+
+  // grande dia: horizontal no desktop, cartões empilhando na vertical no celular
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 901px)', ()=>{
+    const track=document.getElementById('track');
+    const dist=()=>track.scrollWidth - innerWidth;
+    gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'.track-wrap',start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true}});
+  });
+  mm.add('(max-width: 900px)', ()=>{
+    const cards=gsap.utils.toArray('#track .card');
+    cards.forEach((c,i)=>{
+      gsap.from(c.querySelectorAll('h3,p,ul,.art,.btn'),{y:30,opacity:0,duration:.8,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 70%'}});
+      const next=cards[i+1]; if(!next) return;
+      const shade=document.createElement('span'); shade.className='shade'; c.appendChild(shade);
+      const st={trigger:next,start:'top 92%',end:'top 14%',scrub:.6};
+      gsap.fromTo(c,{scale:1},{scale:.9,ease:'none',scrollTrigger:st});
+      gsap.fromTo(shade,{opacity:0},{opacity:.55,ease:'none',scrollTrigger:{...st}});
+    });
+  });
+
+  // pedidos realizados: moldura abre + zoom da foto
+  gsap.utils.toArray('.story').forEach(st=>{
+    const fr=st.querySelector('.frame'), im=fr.querySelector('img');
+    gsap.to(fr,{clipPath:'inset(0% 0% 0% 0% round 28px)',ease:'none',scrollTrigger:{trigger:st,start:'top 90%',end:'top 30%',scrub:true}});
+    gsap.to(im,{scale:1,ease:'none',scrollTrigger:{trigger:st,start:'top bottom',end:'bottom top',scrub:true}});
+    gsap.from(st.querySelectorAll('.num,.tag,h3,p'),{y:36,opacity:0,duration:1,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:st,start:'top 65%'}});
+    const mini=st.querySelector('.mini');
+    if(mini) gsap.from(mini,{y:120,rotation:6,opacity:0,ease:'none',scrollTrigger:{trigger:st,start:'top 80%',end:'top 20%',scrub:true}});
+  });
+
+  // reviews
+  gsap.from('.review',{y:70,opacity:0,rotation:(i)=>[-3,2][i],duration:1.1,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.reviews',start:'top 85%'}});
+
+  // final: bolo surge e brilho cresce
+  gsap.from('#cake',{y:90,scale:.9,opacity:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'#cake',start:'top 90%'}});
+  gsap.fromTo('#cake img',{scale:1.15},{scale:1,ease:'none',scrollTrigger:{trigger:'#cake',start:'top bottom',end:'bottom 60%',scrub:true}});
+  gsap.fromTo('#glow2',{scale:.3,opacity:0},{scale:1,opacity:1,ease:'none',scrollTrigger:{trigger:'#final',start:'top bottom',end:'center center',scrub:true}});
+} else {
+  document.querySelectorAll('.count').forEach(el=>{const d=+(el.dataset.dec||0);el.textContent=parseFloat(el.dataset.to).toLocaleString('pt-BR',{minimumFractionDigits:d});});
+  document.getElementById('starfill').style.width='96%';
+  document.getElementById('hc1').style.position='absolute';
+  document.querySelectorAll('#rainbow path').forEach(p=>p.style.strokeDashoffset='0');
+  fab.classList.add('show');
+  document.querySelectorAll('.frame').forEach(f=>{f.style.clipPath='none';f.querySelector('img').style.transform='none';});
+}
+</script>
+</body>
+</html>
