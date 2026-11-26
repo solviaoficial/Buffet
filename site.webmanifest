@@ -1,0 +1,15 @@
+{
+  "name": "Buffet Fadson Festas",
+  "short_name": "Fadson Festas",
+  "description": "Buffet em Diadema: festas infantis, 15 anos, casamentos e buffet a domicílio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8EF",
+  "theme_color": "#2A0619",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
