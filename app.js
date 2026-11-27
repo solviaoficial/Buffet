@@ -1,6 +1,6 @@
 /* ===== Google Analytics 4 (opcional) =====
    Cole aqui o ID de medição do GA4 (ex.: "G-ABC123XYZ"). Vazio = desativado. */
-const GA_ID = '';
+const GA_ID = 'G-KNP5DWRW3Z';
 window.dataLayer = window.dataLayer || [];
 function gtag(){ dataLayer.push(arguments); }
 if (GA_ID) {
